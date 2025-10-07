@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "racelens"
+version = "1.0.0"
+description = "Horse racing outcome prediction using machine learning"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Tyler", email = "your.email@example.com"}
+]
+keywords = ["horse racing", "machine learning", "data science", "prediction", "analytics"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "pandas>=2.2.3",
+    "numpy>=2.1.3",
+    "pyarrow>=18.0.0",
+    "matplotlib>=3.9.3",
+    "seaborn>=0.13.2",
+    "scikit-learn>=1.6.0",
+    "statsmodels>=0.14.4",
+    "xgboost>=2.1.3",
+    "optuna>=4.1.0",
+    "openpyxl>=3.1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.10.0",
+    "flake8>=7.1.1",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "jupyter>=1.1.1",
+    "ipython>=8.30.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jQueryousGeorge/RaceLens"
+Repository = "https://github.com/jQueryousGeorge/RaceLens"
+"Bug Tracker" = "https://github.com/jQueryousGeorge/RaceLens/issues"
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --cov=src --cov-report=html --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/venv/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
+

@@ -1,0 +1,31 @@
+# RaceLens Project Dependencies
+# Python 3.12 or higher is required
+# Install with: pip install -r requirements.txt
+
+# Core Data Analysis Libraries
+pandas==2.2.3              # Core data manipulation library
+numpy==2.1.3               # Numerical computing
+pyarrow==18.0.0            # Efficient file I/O (Parquet format)
+openpyxl==3.1.5            # For Excel file reading
+
+# Jupyter Notebook
+jupyter==1.1.1             
+notebook==7.2.2            
+ipykernel==6.29.5          
+
+# Data Visualization
+matplotlib==3.9.2          # Plotting library
+seaborn==0.13.2            # Statistical visualization
+
+# Machine Learning
+scikit-learn==1.5.2        # ML algorithms and utilities
+statsmodels==0.14.4        # Statistical modeling
+xgboost==2.1.2             # Gradient boosting
+lightgbm==4.5.0            # Light gradient boosting
+optuna==4.1.0              # Hyperparameter optimization
+
+# Development Tools (optional)
+black==24.10.0             # Code formatting
+flake8==7.1.1              # Code linting
+pytest==8.3.3              # Testing framework
+pytest-cov==6.0.0          # Test coverage
